@@ -2,6 +2,8 @@ import os
 
 class Config(object):
     SECRET_KEY=os.environ.get('SECRET_KEY', default='dev')
-    STORAGE_MODE = 'json'  # json ou sqlite
+    STORAGE_MODE = 'sqlite'  # json ou sqlite
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SQLALCHEMY_DATABASE_URI = r'sqlite:///d:\python\examples\SampleFlask\app\db\clients.db'
+    #SQLALCHEMY_DATABASE_URI = r'sqlite:///d:\python\examples\SampleFlask\app\db\clients.db'
+    #Heroku
+    SQLALCHEMY_DATABASE_URI = r'sqlite:///app/db/clients.db'
