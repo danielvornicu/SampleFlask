@@ -8,4 +8,4 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     #SQLALCHEMY_DATABASE_URI = r'sqlite:///d:\python\examples\SampleFlask\app\db\clients.db'
     #Heroku
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app/db/clients.db')
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, '/app/db/clients.db')
