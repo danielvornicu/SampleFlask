@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome.min.css') }}"> -->
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+      {% if get_flashed_messages() %}
+      <div class="container">
+        {% for category, message in get_flashed_messages(with_categories=True) %}
+          <div id="message{{ loop.index }}">
+            {% if category %}
+              {% if category == 'error' %}
+                <div class="alert alert-danger alert-dismissible">
+              {% elif category == 'warning' %}
+                <div class="alert alert-warning alert-dismissible">
+              {% elif category == 'success' %}
+                <div class="alert alert-success alert-dismissible">
+              {% else %}
+                <div class="alert">
+              {% endif %}
+            {% else %}
+              <div class="alert">
+            {% endif %}
+              <button class="close" data-target="message{{ loop.index }}" data-dismiss="alert" aria-label="delete">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+              {{ message }}
+            </div>
+          </div>
+        {% endfor %}
+
+
+      </div>
+
+    {% endif %}
+    <section class="section">
+      <div class="container">
+        {% block content %}
+        {% endblock %}
+      </div>
+    </section>
+
+  
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+   
+</body>
+</html>

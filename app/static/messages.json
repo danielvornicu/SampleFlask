@@ -1,0 +1,64 @@
+{
+"liste" : { 
+ "actions" : {
+   "titre" : "Action",
+   "consulter" : "Consulter",
+   "modifier" : "Modifier",
+   "supprimer" : "Supprimer",
+   "filtrerParPrenom" : "Filtrer par prénom: ",
+   "filtreListe" : "Filtre appliqué à la liste: ",
+
+   "consulterTitle" : "Consulter cet client",
+   "modifierTitle" : "Modifier cet client",
+   "supprimerTitle" : "Supprimer cet client",
+
+   "creerSucces" : "Le client a été crée avec success: ",
+   "modifierSucces" : "Le client a été modifié avec success: ",
+   "supprimerSucces": "Le client a été supprimé avec success."
+  },
+ "clients" : {
+   "flask" : {
+    "titre" : "Liste des clients (version Flask)"
+   }
+  }
+ },
+"fiche" : {
+  "boutons" : {
+     "annuler" : "Annuler",
+     "creer" : "Créer",
+     "valider" : "Valider",
+     "supprimer" : "Supprimer",
+
+     "annulerTitle" : "Annuler la saisie du client",
+     "creerTitle" : "Créer un nouveau client",
+     "validerTitle" : "Valider et enregistrer les données du client",
+     "validerDisabledTitle" : "Desactivé si données invalides",
+     "supprimerTitle" : "Supprimer le client",
+     "supprimerConfirm" : "Voulez-vous supprimer le client "
+     
+   },
+  "client" : {
+    "titres" : {
+      "modification" : "Modification du client: ",
+      "creation" : "Création d'un client ",
+      "consultation" : "Consultation du client: "
+    },
+    "nom" : "Nom :",
+    "nomPlaceHolder" : "Veuillez saisier le nom",
+    "prenom" :"Prénom :",
+    "prenomPlaceHolder" : "Veuillez saisier le prénom",
+    "validation" : {
+      "nom" : {
+        "required" : "Le nom est obligatoire.",
+        "minlength" : "Le nom doit contenir au moins 3 caracteres.",
+        "maxlength" : "Le nom ne doit pas depasser 50 caracteres."
+      },
+      "prenom" : {
+        "required" : "Le prénom est obligatoire.",
+        "minlength" : "Le prénom doit contenir au moins 3 caracteres.",
+        "maxlength" : "Le prénom ne doit pas depasser 50 caracteres."
+      } 
+    }  
+  }
+ }
+}

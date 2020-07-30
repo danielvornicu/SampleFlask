@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}{{ msg.fiche.client.titres.consultation  + client.prenom + ' ' + client.nom}}{% endblock %}
+
+{% block content %}
+<div class='card'>
+     
+  <div class='card-header'>
+    <h4>{{ msg.fiche.client.titres.consultation  + client.prenom + ' ' + client.nom}}</h4>
+  </div>
+
+  <div class='card-body'>
+    <div class='row'>
+      <div class='col-md-2'>{{ msg.fiche.client.nom}}</div>
+      <div class='col-md-4'>{{client.nom}}</div>
+    </div>
+    <div class='row'>
+      <div class='col-md-2'>{{ msg.fiche.client.prenom}}</div>
+      <div class='col-md-4'>{{client.prenom }}</div>
+    </div>
+  </div>
+
+  <div class='card-footer'>
+    <button class='btn btn-outline-secondary'
+            title="{{ msg.fiche.boutons.annuler}}"
+            style='width:100px'>
+      <i class='fa fa-chevron-left'></i>
+      <a href="{{ url_for('index') }}" class="button is-text">{{ msg.fiche.boutons.annuler}}</a>
+    </button>
+
+    <button class="btn btn-outline-primary"
+          style="width:100px"
+          title="{{ msg.liste.actions.modifier}}">
+      <a  href="{{ url_for('edit', id=client.id) }}">{{ msg.liste.actions.modifier}}</a>
+    </button>
+  </div> 
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}{{ msg.liste.clients.flask.titre}}{% endblock %}
+
+{% block content %}
+<div class='card'>
+    <div class='card-header'>
+      <div class="row">
+          <div class="col-md-8">
+              <h1>{{ msg.liste.clients.flask.titre}}</h1>
+          </div>
+      </div>
+    </div>  
+    
+    <div class='card-body'>
+      <div class='table-responsive'>
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>{{ msg.fiche.client.nom}}</th>
+              <th>{{ msg.fiche.client.prenom}}</th>
+              <th>{{ msg.liste.actions.titre}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for client in clients %}
+              <tr>
+                      <td>{{ client.nom }}</td>
+                      <td>{{ client.prenom }}</td>
+                      <td>
+                          <button class="btn btn-outline-primary btn-sm" title="{{ msg.liste.actions.consulterTitle}}">
+                            <a href="{{ url_for('show', id=client.id) }}">{{ msg.liste.actions.consulter}}</a>
+                          </button> |
+                          <button class="btn btn-outline-primary btn-sm" title="{{ msg.liste.actions.modifierTitle}}">
+                            <a  href="{{ url_for('edit', id=client.id) }}">{{ msg.liste.actions.modifier}} </a>
+                          </button> |
+                          <button class="btn btn-outline-primary btn-sm" title="{{ msg.liste.actions.supprimerTitle}}">
+                            <a  href="{{ url_for('delete', id=client.id) }}">{{ msg.liste.actions.supprimer}}</a>
+                          </button>
+                      </td>
+                </tr>
+              {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="panel">
+          <button id='create_bouton'  
+                  class="btn btn btn-outline-primary btn-sm" title="{{ msg.fiche.boutons.creerTitle}}">
+            <a href="{{ url_for('create') }}">{{ msg.fiche.boutons.creer}}</a>
+          </button>
+      </div>
+    </div>
+</div>
+<br>Storage mode: {{ storage_mode  }}
+{% endblock %}
